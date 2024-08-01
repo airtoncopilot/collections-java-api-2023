@@ -40,7 +40,7 @@ public class CatalogoLivros {
     }
     public Livro pesquisarPorTitulo(String titulo){
         Livro livroPorTitulo = null;
-        if (!livroList.isEmpty() {
+        if (!livroList.isEmpty()) {
             for(Livro l : livroList){
                 if (l.getTitulo().equalsIgnoreCase(titulo)) {
                     livroPorTitulo = l;
@@ -50,4 +50,20 @@ public class CatalogoLivros {
         }
         return livroPorTitulo;
     }
+
+
+    public static void main(String[] args) {
+    // Criando uma instância do catálogo de livros
+        CatalogoLivros catalogoLivros = new CatalogoLivros();
+
+        // Adicionando livros ao catálogo
+        catalogoLivros.adicionarLivro("Microsserviços Prontos Para a Produção", "Susan J. Fowler", 2017);
+        catalogoLivros.adicionarLivro("Java Guia do Programador", "Peter Jandl Junior", 2021);
+        catalogoLivros.adicionarLivro("Código Limpo", "Robert C. Martin", 2009);
+        catalogoLivros.adicionarLivro("O Codificador Limpo", "Robert C. Martin", 2012);
+        System.out.println(catalogoLivros.pesquisarPorAutor("Susan J. Fowler"));
+        System.out.println(catalogoLivros.pesquisarPorIntervaloAnos(2017, 2017));
+        System.out.println(catalogoLivros.pesquisarPorTitulo("Java Guia do Programador"));
+    }
+
 }
